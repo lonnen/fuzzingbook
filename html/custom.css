@@ -11,6 +11,82 @@
 /* Loading fonts in Jupyter */
 @import url(https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|Patua+One|Open+Sans|Source+Code+Pro);
 
+/* Theme colors */
+:root,
+html {
+  --onoffswitch-label-border: #ffffff;
+  --onoffswitch-inner-after-background: #B03A2E;
+  --onoffswitch-inner-after-color: #ffffff;
+  --onoffswitch-inner-before-background: #F1948A;
+  --onoffswitch-inner-before-color: #000000;
+
+  --toc-wrapper--li-span-hover-background: #F1948A;
+  --toc-wrapper-header: #B03A2E;
+
+  --body-background-color: #F0F0F0;
+  --print-background-color: white;
+
+  --container-background-color: #F8F8F8;
+  --print-background-color: white;
+  
+  --input-output-area-background: white;
+  --output_area-pre-color: darkblue;
+  --output_stderr-pre-color: #B03A2E;
+
+  --h1-h2-h3-color: #B03A2E;
+  --h4-h5-h6-color: #000;
+
+  --a-link-color: #A93226;
+  --a-visited-color: #A93226;
+  --a-hover-focus-color: #F1948A;
+  --a-active-color: red;
+  
+  --banner-background: LightYellow;
+  
+  --selection-background: #ffff50;
+
+  --quiz-background: cornsilk;
+
+  --details-border-color: gray;
+  
+  --beta-background: #ffff50;
+  --beta-color: #000000;
+  
+  --cssmenu-a-thispage-color: #ffffff;
+  --cssmenu-a-notpublic-color: #a0a0a0;
+  --cssmenu-a-editasnotebook-color: #ffffff;
+
+  --new-chapter-color: #F1948A;
+ 
+  --a-import-color: blue;
+  --a-import-visited-color: darkblue;
+  --a-import-hover-color: cornflowerblue;
+  --a-import-active-color: red;
+
+  --cssmenu-border-color: #bb0000;
+
+  --cssmenu-ol-li-a-text-shadow: rgba(0, 0, 0, 0.4);
+  --cssmenu-ol-li-a-borderright: #bb0000;
+  --cssmenu-ol-li-a-color: #ffffff;
+  --cssmenu-ol-li-a-after-border-color: #bb0000;
+  --cssmenu-ol-li-has-sub-a-before-border-top: #ffffff;
+  --cssmenu-ol-li-has-sub-hover-border-color: #3f3f3f;
+  --cssmenu-ol-li-has-sub-hover-a-background: #3f3f3f;
+  --cssmenu-ol-li-has-sub-hover-a-border-color: #3f3f3f;
+  --cssmenu-ol-li-has-sub-focus-within-a-background: #3f3f3f;
+  --cssmenu-ol-li-has-sub-focus-within-a-border-color: #3f3f3f;
+  --cssmenu-ol-li-ol-background: #3f3f3f;
+  --cssmenu-ol-li-ol-li-a-color: #ffffff;
+  --cssmenu-ol-li-ol-li-a-text-shadow: rgba(0, 0,  0, 0,5);
+
+  --cssmenu-ul-ul-li-a-hover-background: #bb0000;  
+  --cssmenu-ul-li-a-hover-background: #bb0000;
+  --cssmenu-ul-li-a-hover-color: #ffffff;
+  --cssmenu-ul-ol-a-hover-background: #bb0000;
+  --cssmenu-ul-ol-a-hover-color: #ffffff;
+  --cssmenu-ul-li-has-sub-a-hover-before: #ffffff;
+}
+
 
 /* Fonts */
 h1, h2, h3, h4, h5 {
@@ -140,19 +216,19 @@ h4, h5 {
 /* Exercises */
 /* Some color tweaks to exercise2 buttons */
 .onoffswitch-label {
-    border: 2px solid #ffffff!important;
+    border: 2px solid var(--onoffswitch-label-border)!important;
 }
 
 /* Show solution */
 .onoffswitch-inner:after {
-    background-color: #B03A2E!important; 
-    color: #ffffff!important;
+    background-color: var(--onoffswitch-inner-after)!important; 
+    color: var(--onoffswitch-inner-after-color)!important;
 }
 
 /* Hide solution */
 .onoffswitch-inner:before {
-    background-color: #F1948A!important; 
-    color: #000000!important;
+    background-color: var(--onoffswitch-inner-before-background)!important; 
+    color: var(--onoffswitch-inner-before-color)!important;
 }
 
 
@@ -166,7 +242,7 @@ h4, h5 {
 }
 
 #toc-wrapper li > span:hover {
-  background-color: #F1948A!important;
+  background-color: var(--toc-wrapper--li-span-hover-background)!important;
 }
 .toc-item li { 
     font-size: 14px!important; 
@@ -175,7 +251,7 @@ h4, h5 {
 }
 #toc-wrapper .header {
   font-size: 20px!important;
-  color: #B03A2E;
+  color: var(--toc-wrapper-header);
   font-family: 'Patua One', Helvetica, Arial, sans-serif;
   font-weight: normal!important;
 }
@@ -185,64 +261,64 @@ h4, h5 {
 /* Colors */
 /* We want white code boxes on a light grey background */
 body {
-    background-color: #F0F0F0;
+    background-color: var(--body-background-color);
 }
 /* But not when it's print */
 @media print {
-    background-color: white;
+    background-color: var(--print-background-color);
 }
 
 .container {
-    background-color: #F8F8F8!important;    
+    background-color: var(--container-background-color)!important;    
 }
 @media print {
-    background-color: white!important;
+    background-color: var(--print-background-color)!important;
 }
 
 
 .input_area, .output_area {
-    background-color: white!important;    
+    background-color: var(--input-output-area-background)!important;
 }
 
 /* Regular outputs come in blue, errors in red */
 .output_area pre {
-    color: darkblue!important;
+    color: var(--output_area-pre-color)!important;
 /*  font-weight: bold; */
 }
 
 .output_stderr pre {
-    color: #B03A2E!important;
+    color: var(--output_stderr-pre-color)!important;
 }
 
 /* Headers are dark red, too */
 h1, h2, h3 {
-    color: #B03A2E!important;
+    color: var(--h1-h2-h3-color)!important;
 }
 
 h4, h5, h6, summary {
-    color: black;
+    color: var(--h4-h5-h6-color);
 }
 
 
 /* And links also come in shades of red */
 a:link { /* unvisited link */
-    color: #A93226;
+    color: var(--a-link-color);
     /* text-decoration: none!important; */
 }
 
 a:visited {
-    color: #A93226;
+    color: var(--a-visited-color);
     /* text-decoration: none!important; */
 }
 
 a:hover, a:focus {
-    color: #F1948A;
+    color: var(--a-hover-focus-color);
     /* text-decoration: none!important; */
     /* font-weight: bolder!important; */
 }
 
 a:active {
-    color: red;
+    color: var(--a-active-color);
     /* text-decoration: none!important; */
 }
 
@@ -257,16 +333,16 @@ svg a {
     font-size: large;
     text-align: center;
     border-style: dotted;
-    background-color: LightYellow;
+    background-color: var(--banner-background);
 }
 
 
 /* Make selections yellow; easier to see in classroom */
 ::selection {
-    background: #ffff50;
+    background: var(--selection-background);
 }
 ::-moz-selection { /* Code for Firefox */
-    background: #ffff50;
+    background: var(--selection-background);
 }
 
 
@@ -299,7 +375,7 @@ svg a {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 5px;
-    background: cornsilk;
+    background: var(--quiz-background);
 }
 
 
@@ -327,7 +403,7 @@ details:not([open]) summary ~ * {
 
 details {
     border-style: dashed;
-    border-color: gray;
+    border-color: var(--details-border-color);
     border-width: 1px;
     padding-top: 0px;
     padding-left: 15px;
@@ -358,29 +434,29 @@ summary {
 
 /* Beta warning */
 .beta {
-    background: #ffff50;
+    background: var(--beta-background);
     padding: 3px;
     font-style: italic;
-    color: #000000;
+    color: var(--beta-color);
     padding: 5px;
 }
 
 /* Current page in menu */
 #cssmenu a.this_page {
     font-weight: bold;
-    color: #ffffff;
+    color: var(--cssmenu-a-thispage-color);
 }
 
 /* Page not public yet in menu */
 #cssmenu a.not_public {
-    color: #a0a0a0;
+    color: var(--cssmenu-a-notpublic-color);
 }
 
 
 /* Notebook page in menu */
 #cssmenu a.edit_as_notebook {
     font-weight: bold;
-    color: #ffffff;
+    color: var(--cssmenu-a-editasnotebook-color);
 }
 
 /* More coming in menu */
@@ -393,7 +469,7 @@ summary {
     font-weight: bold;
     font-size: 100%;
     /* color: aqua; */
-    color: #F1948A;
+    color: var(--new-chapter-color);
 }
 
 /* Part number in menu */
@@ -418,7 +494,7 @@ summary {
 /* Imports */
 a.import {
     text-decoration: underline;
-    color: blue;
+    color: var(--a-import-color);
 }
 
 a.import[href]:after {
@@ -426,15 +502,15 @@ a.import[href]:after {
 }
 
 a.import:visited {
-    color: darkblue;
+    color: var(--a-import-visited-color);
 }
 
 a.import:hover, a.import:focus {
-    color: cornflowerblue;
+    color: var(--a-import-hover-color);
 }
 
 a.import:active {
-    color: red!important;
+    color: var(--a-import-active-color)!important;
 }
 
 
@@ -486,7 +562,7 @@ article {
   border: 1px solid;
   /* border-radius: 5px; */
   width: 100%;
-  border-color: #bb0000;
+  border-color: var(--cssmenu-border-color);
   position: fixed;
   z-index: 5000;
   transition: opacity 1s;
@@ -538,12 +614,12 @@ article {
   position: relative;
   text-align: center;
   text-decoration: none;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 0 var(--cssmenu-ol-li-a-text-shadow);
   font-weight: 700;
   font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;
-  border-right: 1px solid #bb0000;
-  color: #ffffff;
+  border-right: 1px solid var(--cssmenu-ol-li-a-borderright);
+  color: var(--cssmenu-ol-li-a-color);
   padding: 12px 20px;
 }
 #cssmenu > ul > li:first-child > a,
@@ -559,7 +635,7 @@ article {
   bottom: -1px;
   right: -2px;
   z-index: 5010;
-  border-color: #bb0000;
+  border-color: var(--cssmenu-ol-li-a-after-border-color);
 }
 #cssmenu ul li.has-sub:hover > a:after,
 #cssmenu ol li.has-sub:hover > a:after {
@@ -573,7 +649,7 @@ article {
   top: 18px;
   right: 6px;
   border: 5px solid transparent;
-  border-top: 5px solid #ffffff;
+  border-top: 5px solid var(--cssmenu-ol-li-has-sub-a-before-border-top);
 }
 #cssmenu > ul > li.has-sub:hover > a:before,
 #cssmenu > ol > li.has-sub:hover > a:before {
@@ -583,7 +659,7 @@ article {
 #cssmenu > ol > li.has-sub:hover > a {
   padding-bottom: 14px;
   z-index: 5020;
-  border-color: #3f3f3f;
+  border-color: var(--cssmenu-ol-li-has-sub-hover-border-color);
 }
 #cssmenu ul li.has-sub:hover > ul,
 #cssmenu ul li.has-sub:hover > ol,
@@ -595,8 +671,8 @@ article {
 #cssmenu > ul > li.has-sub:hover > a,
 #cssmenu > ol > li.has-sub > a:hover,
 #cssmenu > ol > li.has-sub:hover > a {
-  background: #3f3f3f;
-  border-color: #3f3f3f;
+  background: var(--cssmenu-ol-li-has-sub-hover-a-background);
+  border-color: var(--cssmenu-ol-li-has-sub-hover-a-border-color);
 }
 #cssmenu ul li.has-sub:focus-within > ul,
 #cssmenu ul li.has-sub:focus-within > ol,
@@ -608,8 +684,8 @@ article {
 #cssmenu > ul > li.has-sub:focus-within > a,
 #cssmenu > ol > li.has-sub > a:focus-within,
 #cssmenu > ol > li.has-sub:focus-within > a {
-  background: #3f3f3f;
-  border-color: #3f3f3f;
+  background: var(--cssmenu-ol-li-has-sub-focus-within-a-background);
+  border-color: var(--cssmenu-ol-li-has-sub-focus-within-a-border-color);
 }
 #cssmenu ul li > ul,
 #cssmenu ul li > ol,
@@ -619,7 +695,7 @@ article {
   width: auto;
   position: absolute;
   top: 38px;
-  background: #3f3f3f;
+  background: var(--cssmenu-ol-li-ol-background);
   /* border-radius: 0 0 5px 5px; */
   z-index: 5020;
   padding: 10px 0;
@@ -662,16 +738,16 @@ article {
   display: block;
   position: relative;
   font: 10pt Arial, Helvetica, sans-serif;
-  color: #ffffff;
+  color: var(--cssmenu-ol-li-a-color);
   text-decoration: none;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0 var(--cssmenu-ol-li-text-shadow);
   margin: 0;
   padding: 8px 20px;
 }
 #cssmenu,
 #cssmenu ul ul > li:hover > a,
 #cssmenu ul ul li a:hover {
-  background: #bb0000;
+  background: var(--cssmenu-ul-ul-li-a-hover-background);
   /*
   background: -moz-linear-gradient(top, #cc0000 0%, #990000 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cc0000), color-stop(100%, #990000));
@@ -682,16 +758,16 @@ article {
   */
 }
 #cssmenu > ul > li > a:hover {
-  background: #bb0000;
-  color: #ffffff;
+  background: var(--cssmenu-ul-li-a-hover-background);
+  color: var(--cssmenu-ul-li-a-hover-color);
 }
 #cssmenu ul ul a:hover,
 #cssmenu ul ol a:hover {
-  background: #bb0000;
-  color: #ffffff;
+  background: var(--cssmenu-ul-ol-a-hover-background);
+  color: var(--cssmenu-ul-ol-a-hover-color);
 }
 #cssmenu > ul > li.has-sub > a:hover:before {
-  border-top: 5px solid #ffffff;
+  border-top: 5px solid var(--cssmenu-ul-li-has-sub-a-hover-before);
 }
 
 /* On print, do not show the menu */
